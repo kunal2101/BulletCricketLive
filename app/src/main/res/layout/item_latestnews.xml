@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginTop="10dp"
+    android:clickable="true"
+    app:cardElevation="10dp"
+    app:cardBackgroundColor="#151515"
+    android:focusable="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+  >
+
+        <ImageView
+            android:id="@+id/iv_news"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:scaleType="centerCrop"></ImageView>
+
+        <TextView
+            android:id="@+id/tv_newstitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/iv_news"
+            android:layout_marginTop="3dp"
+            android:padding="2dp"
+            android:background="#96000000"
+            android:text="News Title"
+            android:textColor="#FF9800"
+            android:textSize="16sp"></TextView>
+
+        <TextView
+            android:id="@+id/tv_newsdatemsg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_newstitle"
+            android:layout_marginTop="3dp"
+            android:padding="2dp"
+            android:text="Publish On: "
+            android:textColor="#FAFAFA"
+            android:textSize="14sp"></TextView>
+
+        <TextView
+            android:id="@+id/tv_newsdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_newstitle"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="3dp"
+            android:layout_toRightOf="@+id/tv_newsdatemsg"
+            android:padding="2dp"
+            android:text="Date"
+            android:textColor="#FDFDFD"
+            android:textSize="14sp"></TextView>
+
+        <ImageView
+            android:id="@+id/iv_newsshare"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="2dp"
+            android:layout_below="@+id/tv_newstitle"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_share_white"></ImageView>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
+
+

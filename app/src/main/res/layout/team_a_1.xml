@@ -1,0 +1,757 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/linear_inning_a_1"
+        android:background="#2196F3"
+        android:padding="10dp"
+        >
+
+        <TextView
+            android:id="@+id/tv_teama_inning_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:textColor="#FFF"
+            android:text="Team A Inning 1" />
+
+        <TextView
+            android:id="@+id/tv_teama_score_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:textColor="#FFF"
+            android:visibility="gone"
+            android:text="Score" />
+
+        <ImageView
+            android:id="@+id/iv_teama_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:src="@drawable/ic_baseline_keyboard_arrow_up_24" />
+
+    </LinearLayout>
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:id="@+id/table_team_a_1"
+        app:layout_constraintTop_toBottomOf="@+id/linear_inning_a_1">
+
+        <TableRow
+            android:background="#FFF"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/tv_teama_batsman"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Batsman" />
+
+            <TextView
+                android:id="@+id/tv_teama_run"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="R" />
+
+            <TextView
+                android:id="@+id/tv_teama_ball"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="B" />
+
+            <TextView
+                android:id="@+id/tv_teama_4s"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="4s" />
+
+            <TextView
+                android:id="@+id/tv_teama_6s"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="6s" />
+
+            <TextView
+                android:id="@+id/tv_teama_sr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="SR" />
+        </TableRow>
+
+        <!--player 1-->
+        <TableRow
+            android:background="#AFAFAF"
+            android:padding="2dp">
+
+            <TextView
+                android:id="@+id/tv_teama_batsman1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Batsman" />
+
+            <TextView
+                android:id="@+id/tv_teama_run1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tv_teama_ball1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tv_teama_4s1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tv_teama_6s1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tv_teama_sr1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="0.0" />
+        </TableRow>
+
+        <TableRow
+            android:background="#AFAFAF"
+            android:padding="2dp">
+
+            <TextView
+                android:id="@+id/tv_teama_out1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="#FF9800" />
+        </TableRow>
+
+        <!--player 2-->
+        <TableRow
+            android:background="#858484"
+            android:padding="2dp">
+
+            <TextView
+                android:id="@+id/tv_teama_batsman2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Batsman" />
+
+            <TextView
+                android:id="@+id/tv_teama_run2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tv_teama_ball2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tv_teama_4s2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tv_teama_6s2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tv_teama_sr2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="0.0" />
+        </TableRow>
+
+        <TableRow
+            android:background="#858484"
+            android:padding="2dp">
+
+            <TextView
+                android:id="@+id/tv_teama_out2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="#FF9800" />
+        </TableRow>
+
+
+        <!--player 3-->
+        <TableRow
+            android:background="#AFAFAF"
+            android:padding="2dp">
+
+            <TextView
+                android:id="@+id/tv_teama_batsman3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Batsman" />
+
+            <TextView
+                android:id="@+id/tv_teama_run3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tv_teama_ball3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tv_teama_4s3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tv_teama_6s3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tv_teama_sr3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="0.0" />
+        </TableRow>
+
+        <TableRow
+            android:background="#AFAFAF"
+            android:padding="2dp">
+
+            <TextView
+                android:id="@+id/tv_teama_out3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="#FF9800" />
+        </TableRow>
+    <!--player 4-->
+        <TableRow
+            android:background="#858484"
+            android:padding="2dp">
+
+            <TextView
+                android:id="@+id/tv_teama_batsman4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Batsman" />
+
+            <TextView
+                android:id="@+id/tv_teama_run4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tv_teama_ball4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tv_teama_4s4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tv_teama_6s4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tv_teama_sr4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="0.0" />
+        </TableRow>
+
+        <TableRow
+            android:background="#858484"
+            android:padding="2dp">
+
+            <TextView
+                android:id="@+id/tv_teama_out4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="#FF9800" />
+        </TableRow>
+
+        <!--player 5-->
+        <TableRow
+            android:background="#AFAFAF"
+            android:padding="2dp">
+
+            <TextView
+                android:id="@+id/tv_teama_batsman5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Batsman" />
+
+            <TextView
+                android:id="@+id/tv_teama_run5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tv_teama_ball5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tv_teama_4s5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tv_teama_6s5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tv_teama_sr5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="0.0" />
+        </TableRow>
+
+        <TableRow
+            android:background="#AFAFAF"
+            android:padding="2dp">
+
+            <TextView
+                android:id="@+id/tv_teama_out5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="#FF9800" />
+        </TableRow>
+
+        <!--player 6-->
+        <TableRow
+            android:background="#858484"
+            android:padding="2dp">
+
+            <TextView
+                android:id="@+id/tv_teama_batsman6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Batsman" />
+
+            <TextView
+                android:id="@+id/tv_teama_run6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tv_teama_ball6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tv_teama_4s6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tv_teama_6s6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tv_teama_sr6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="0.0" />
+        </TableRow>
+
+        <TableRow
+            android:background="#858484"
+            android:padding="2dp">
+
+            <TextView
+                android:id="@+id/tv_teama_out6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="#FF9800" />
+        </TableRow>
+
+        <!--player 7-->
+        <TableRow
+            android:background="#AFAFAF"
+            android:padding="2dp">
+
+            <TextView
+                android:id="@+id/tv_teama_batsman7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Batsman" />
+
+            <TextView
+                android:id="@+id/tv_teama_run7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tv_teama_ball7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tv_teama_4s7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tv_teama_6s7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tv_teama_sr7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="0.0" />
+        </TableRow>
+
+        <TableRow
+            android:background="#AFAFAF"
+            android:padding="2dp">
+
+            <TextView
+                android:id="@+id/tv_teama_out7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="#FF9800" />
+        </TableRow>
+
+        <!--player 8-->
+        <TableRow
+            android:background="#858484"
+            android:padding="2dp">
+
+            <TextView
+                android:id="@+id/tv_teama_batsman8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Batsman" />
+
+            <TextView
+                android:id="@+id/tv_teama_run8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tv_teama_ball8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tv_teama_4s8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tv_teama_6s8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tv_teama_sr8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="0.0" />
+        </TableRow>
+
+        <TableRow
+            android:background="#858484"
+            android:padding="2dp">
+
+            <TextView
+                android:id="@+id/tv_teama_out8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="#FF9800" />
+        </TableRow>
+        <!--player 9-->
+        <TableRow
+            android:background="#AFAFAF"
+            android:padding="2dp">
+
+            <TextView
+                android:id="@+id/tv_teama_batsman9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Batsman" />
+
+            <TextView
+                android:id="@+id/tv_teama_run9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tv_teama_ball9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tv_teama_4s9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tv_teama_6s9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tv_teama_sr9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="0.0" />
+        </TableRow>
+
+        <TableRow
+            android:background="#AFAFAF"
+            android:padding="2dp">
+
+            <TextView
+                android:id="@+id/tv_teama_out9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="#FF9800" />
+        </TableRow>
+        <!--player 10-->
+        <TableRow
+            android:background="#858484"
+            android:padding="2dp">
+
+            <TextView
+                android:id="@+id/tv_teama_batsman10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Batsman" />
+
+            <TextView
+                android:id="@+id/tv_teama_run10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tv_teama_ball10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tv_teama_4s10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tv_teama_6s10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tv_teama_sr10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="0.0" />
+        </TableRow>
+
+        <TableRow
+            android:background="#858484"
+            android:padding="2dp">
+
+            <TextView
+                android:id="@+id/tv_teama_out10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="#FF9800" />
+        </TableRow>
+
+        <!--player 11-->
+        <TableRow
+            android:background="#AFAFAF"
+            android:padding="2dp">
+
+            <TextView
+                android:id="@+id/tv_teama_batsman11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Batsman" />
+
+            <TextView
+                android:id="@+id/tv_teama_run11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tv_teama_ball11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tv_teama_4s11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tv_teama_6s11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tv_teama_sr11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="0.0" />
+        </TableRow>
+
+        <TableRow
+            android:background="#AFAFAF"
+            android:padding="2dp">
+
+            <TextView
+                android:id="@+id/tv_teama_out11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="#FF9800" />
+        </TableRow>
+    </TableLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

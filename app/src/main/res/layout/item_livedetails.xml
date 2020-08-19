@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000"
+    android:paddingLeft="10dp"
+    android:paddingTop="20dp"
+    android:paddingRight="10dp">
+
+    <LinearLayout
+        android:id="@+id/l1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#000"
+        android:padding="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_match"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.6"
+            android:padding="5dp"
+            android:text="MATCH"
+            android:textColor="#FFF"
+            android:textSize="18sp"></TextView>
+
+        <TextView
+            android:id="@+id/tv_matchs"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="5dp"
+            android:textColor="#FFF"
+            android:textSize="18sp"></TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/l2"
+        android:layout_width="match_parent"
+        android:padding="10dp"
+        android:layout_height="wrap_content"
+        android:background="#222"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/l1">
+
+
+        <TextView
+            android:id="@+id/tv_matchtype"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.6"
+            android:padding="5dp"
+            android:text="MATCH TYPE"
+            android:textColor="#FFF"
+            android:textSize="18sp"></TextView>
+
+        <TextView
+            android:id="@+id/tv_matchtypes"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="5dp"
+            android:textColor="#FFF"
+            android:textSize="18sp"></TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/l3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#000"
+        android:padding="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/l2">
+
+        <TextView
+            android:id="@+id/tv_matchdate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.6"
+            android:padding="5dp"
+            android:text="MATCH DATE"
+            android:textColor="#FFF"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/tv_matchdates"
+            app:layout_constraintTop_toBottomOf="@+id/tv_matchtype"></TextView>
+
+        <TextView
+            android:id="@+id/tv_matchdates"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="5dp"
+            android:textColor="#FFF"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toRightOf="@+id/tv_matchdate"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_matchtype"></TextView>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/l4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#222"
+        android:padding="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/l3">
+
+        <TextView
+            android:id="@+id/tv_matchseries"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.6"
+            android:background="#222"
+            android:padding="5dp"
+            android:text="MATCH SERIES"
+            android:textColor="#FFF"
+            android:textSize="18sp"></TextView>
+
+        <TextView
+            android:id="@+id/tv_matchseriess"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#222"
+            android:padding="5dp"
+            android:textColor="#FFF"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toRightOf="@+id/tv_matchseries"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_matchdate"></TextView>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/l5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#000"
+        android:padding="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/l4">
+
+        <TextView
+            android:id="@+id/tv_matchvenue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.6"
+            android:padding="5dp"
+            android:text="MATCH VENUE"
+            android:textColor="#FFF"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/tv_matchvenues"
+            app:layout_constraintTop_toBottomOf="@+id/tv_matchseries"></TextView>
+
+        <TextView
+            android:id="@+id/tv_matchvenues"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="5dp"
+            android:textColor="#FFF"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toRightOf="@+id/tv_matchvenue"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_matchseries"></TextView>
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

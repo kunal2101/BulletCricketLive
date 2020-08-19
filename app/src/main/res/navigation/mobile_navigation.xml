@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.trishasofttech.bulletcricketlive.Fragment.Home.HomeFragment"
+        android:label="@string/title_home" />
+
+    <fragment
+        android:id="@+id/navigation_news"
+        android:name="com.trishasofttech.bulletcricketlive.news.NewsFragment"
+        android:label="@string/title_news" />
+
+    <fragment
+        android:id="@+id/navigation_live"
+        android:name="com.trishasofttech.bulletcricketlive.live.LiveFragment"
+        android:label="@string/title_live" />
+    <fragment
+        android:id="@+id/navigation_result"
+        android:name="com.trishasofttech.bulletcricketlive.result.ResultFragment"
+        android:label="@string/title_result" />
+    <fragment
+        android:id="@+id/navigation_upcoming"
+        android:name="com.trishasofttech.bulletcricketlive.upcoming.UpcomingFragment"
+        android:label="@string/title_upcoming" />
+</navigation>

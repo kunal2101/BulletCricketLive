@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home_id"
+            />
+        <item
+            android:id="@+id/nav_about_id"
+            android:icon="@drawable/ic_nav_about"
+            android:title="About Us" />
+        <item
+            android:id="@+id/nav_advertise_id"
+            android:icon="@drawable/ic_nav_advertise"
+            android:title="Advertise with us" />
+        <item
+            android:id="@+id/nav_rateus_id"
+            android:icon="@drawable/ic_nav_rateus"
+            android:title="Rate us" />
+        <item
+            android:id="@+id/nav_privacy_id"
+            android:icon="@drawable/ic_nav_privacy"
+            android:title="Privacy Policy" />
+    </group>
+</menu>

@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/line_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="serif"
+        android:padding="5dp"
+        android:text="Match Information"
+        android:textColor="#000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/line_relative"
+        app:layout_constraintTop_toTopOf="parent"></TextView>
+
+    <RelativeLayout
+        android:id="@+id/line_relative"
+        android:layout_width="match_parent"
+        android:layout_height="550dp"
+        app:layout_constraintTop_toBottomOf="@+id/line_info">
+
+        <TextView
+            android:id="@+id/line_final"
+            android:layout_width="150dp"
+            android:layout_height="550dp"
+            android:background="#2196F3"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Match Final Result"
+            android:textColor="#FFF"
+            android:textSize="16sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></TextView>
+
+        <TextView
+            android:id="@+id/line_team1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/line_final"
+            android:padding="5dp"
+            android:text="Team 1"
+            android:textColor="#2196F3"
+            android:textSize="14sp"></TextView>
+
+
+        <TextView
+            android:id="@+id/line_runs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/line_team1"
+            android:layout_toRightOf="@+id/line_final"
+            android:padding="5dp"
+            android:text="Run/W:"
+            android:textColor="#000"
+            android:textSize="14sp"></TextView>
+
+        <TextView
+            android:id="@+id/line_overs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/line_runs"
+            android:layout_toRightOf="@+id/line_final"
+            android:padding="5dp"
+            android:text="Overs:"
+            android:textColor="#000"
+            android:textSize="14sp"></TextView>
+
+        <TextView
+            android:id="@+id/line_target"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/line_overs"
+            android:layout_toRightOf="@+id/line_final"
+            android:padding="5dp"
+            android:text="Target:"
+            android:textColor="#000"
+            android:textSize="14sp"></TextView>
+
+        <TextView
+            android:id="@+id/line_crr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/line_target"
+            android:layout_toRightOf="@+id/line_final"
+            android:padding="5dp"
+            android:text="C.R.R:"
+            android:textColor="#000"
+            android:textSize="14sp"></TextView>
+
+        <View
+            android:id="@+id/line_view"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@+id/line_crr"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/line_final"
+            android:background="#000">
+
+        </View>
+
+        <TextView
+            android:id="@+id/line_runreq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/line_view"
+            android:layout_toRightOf="@+id/line_final"
+            android:padding="5dp"
+            android:text="Runs Req:"
+            android:textColor="#000"
+            android:textSize="14sp"></TextView>
+
+        <TextView
+            android:id="@+id/line_rrr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/line_runreq"
+            android:layout_toRightOf="@+id/line_final"
+            android:padding="5dp"
+            android:text="R.R.R:"
+            android:textColor="#000"
+            android:textSize="14sp"></TextView>
+
+        <TextView
+            android:id="@+id/line_ballsreq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/line_rrr"
+            android:layout_toRightOf="@+id/line_final"
+            android:padding="5dp"
+            android:text="Balls Req:"
+            android:textColor="#000"
+            android:textSize="14sp"></TextView>
+
+        <TextView
+            android:id="@+id/line_mrkrate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/line_ballsreq"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@+id/line_final"
+            android:padding="5dp"
+            android:text="Market Rate:"
+            android:textColor="#2196F3"
+            android:textSize="14sp"></TextView>
+
+        <TextView
+            android:id="@+id/line_mr1"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/line_mrkrate"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/line_final"
+            android:background="@drawable/mr_back"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="0"
+            android:textColor="#000"
+            android:textSize="14sp"></TextView>
+
+        <TextView
+            android:id="@+id/line_mr2"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/line_mrkrate"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/line_mr1"
+            android:background="@drawable/mr_back"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="1"
+            android:textColor="#000"
+            android:textSize="14sp"></TextView>
+
+        <TextView
+            android:id="@+id/line_team2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/line_mr1"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/line_final"
+            android:padding="5dp"
+            android:text="Team 2"
+            android:textColor="#2196F3"
+            android:textSize="14sp"></TextView>
+
+        <View
+            android:id="@+id/line_view2"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@+id/line_team2"
+            android:layout_toRightOf="@+id/line_final"
+            android:background="#000"></View>
+
+        <TextView
+            android:id="@+id/line_session"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/line_view2"
+            android:layout_toRightOf="@+id/line_final"
+            android:padding="5dp"
+            android:text="Session/Over"
+            android:textColor="#2196F3"
+            android:textSize="14sp"></TextView>
+
+        <TextView
+            android:id="@+id/line_runball"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/line_view2"
+            android:layout_alignParentRight="true"
+            android:padding="5dp"
+            android:text="Run x Ball"
+            android:textColor="#2196F3"
+            android:textSize="14sp"></TextView>
+
+        <TextView
+            android:id="@+id/line_session1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/line_session"
+            android:layout_toRightOf="@+id/line_final"
+            android:background="@drawable/mr_back"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="0"
+            android:textColor="#000"
+            android:textSize="14sp"></TextView>
+        <TextView
+            android:id="@+id/line_session2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/line_session"
+            android:layout_toRightOf="@+id/line_session1"
+            android:background="@drawable/mr_back"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="0"
+            android:textColor="#000"
+            android:textSize="14sp"></TextView>
+
+
+        <TextView
+            android:id="@+id/line_runball2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/line_session"
+            android:background="@drawable/mr_back"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="0"
+            android:layout_alignParentRight="true"
+            android:textColor="#000"
+            android:textSize="14sp"></TextView>
+
+        <TextView
+            android:id="@+id/line_runball1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/line_session"
+            android:background="@drawable/mr_back"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="0"
+            android:layout_toLeftOf="@+id/line_runball2"
+            android:textColor="#000"
+            android:textSize="14sp"></TextView>
+
+
+        <TextView
+            android:id="@+id/line_lastball"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/line_session1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Last Six Balls"
+            android:layout_toRightOf="@+id/line_final"
+            android:textColor="#2196F3"
+            android:textSize="14sp"></TextView>
+
+        <TextView
+            android:id="@+id/line_lastball1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/line_lastball"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="0"
+            android:background="@drawable/lastball_back"
+            android:layout_toRightOf="@+id/line_final"
+            android:textColor="#FFF"
+            android:textSize="14sp"></TextView>
+
+        <TextView
+            android:id="@+id/line_lastball2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/line_lastball"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="0"
+            android:background="@drawable/lastball_back"
+            android:layout_toRightOf="@+id/line_lastball1"
+            android:textColor="#FFF"
+            android:textSize="14sp"></TextView>
+
+        <TextView
+            android:id="@+id/line_lastball3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/line_lastball"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="0"
+            android:background="@drawable/lastball_back"
+            android:layout_toRightOf="@+id/line_lastball2"
+            android:textColor="#FFF"
+            android:textSize="14sp"></TextView>
+
+        <TextView
+            android:id="@+id/line_lastball4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/line_lastball"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="0"
+            android:background="@drawable/lastball_back"
+            android:layout_toRightOf="@+id/line_lastball3"
+            android:textColor="#FFF"
+            android:textSize="14sp"></TextView>
+
+        <TextView
+            android:id="@+id/line_lastball5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/line_lastball"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="0"
+            android:background="@drawable/lastball_back"
+            android:layout_toRightOf="@+id/line_lastball4"
+            android:textColor="#FFF"
+            android:textSize="14sp"></TextView>
+
+        <TextView
+            android:id="@+id/line_lastball6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/line_lastball"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="0"
+            android:background="@drawable/lastball_back"
+            android:layout_toRightOf="@+id/line_lastball5"
+            android:textColor="#FFF"
+            android:textSize="14sp"></TextView>
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
