@@ -34,10 +34,11 @@ import java.util.Iterator;
 
 public class Scorecard extends Fragment {
 
-    String sKey = "";
-    String matchUrl = "https://rest.cricketapi.com/rest/v2/match/" + sKey + "/?access_token=2s1294346407548948481s1295076065408072282";
+    String sKey = "",format ="";
+    String matchUrl = "https://rest.cricketapi.com/rest/v2/match/" + sKey + "/?access_token=2s1294346407548948481s1298512701944908478";
     ArrayList<String> ArryPlaying_Xi_A = new ArrayList<>();
     ArrayList<String> ArryPlaying_Xi_B = new ArrayList<>();
+    ArrayList<String> ArryPlaying_Xi_B_final = new ArrayList<>();
     ArrayList<HashMap<String, String>> ArryHashPlaying_Xi_A = new ArrayList<>();
     ArrayList<HashMap<String, String>> ArryHashPlaying_Xi_B = new ArrayList<>();
     TextView tv_teama_batsman, tv_teama_batsman1, tv_teama_batsman2, tv_teama_batsman3, tv_teama_batsman4, tv_teama_batsman5, tv_teama_batsman6,
@@ -367,6 +368,18 @@ public class Scorecard extends Fragment {
         Bundle bundle = this.getArguments();
         if (bundle != null) {
             sKey = bundle.getString("skey", "defaultValue");
+            format = bundle.getString ( "format","null" );
+           /* if(format.equalsIgnoreCase ( "c" )){
+                table_team_a_2.setVisibility ( View.VISIBLE );
+                table_team_b_2.setVisibility ( View.VISIBLE );
+
+            }else if(format.equalsIgnoreCase ( "test" )){
+                table_team_a_2.setVisibility ( View.GONE );
+                table_team_b_2.setVisibility ( View.GONE );
+            }else  if(format.equalsIgnoreCase ( "test" )){
+                table_team_a_2.setVisibility ( View.GONE );
+                table_team_b_2.setVisibility ( View.GONE );
+            }*/
             loadCuMatch(sKey);
         }
 
@@ -375,7 +388,7 @@ public class Scorecard extends Fragment {
     }
 
     private void loadCuMatch(String sKey) {
-        String LiveUrl = "https://rest.cricketapi.com/rest/v2/match/" + sKey + "/?access_token=2s1294346407548948481s1296111383213120903";
+        String LiveUrl = "https://rest.cricketapi.com/rest/v2/match/" + sKey + "/?access_token=2s1294346407548948481s1298512701944908478";
         StringRequest sr = new StringRequest(0, LiveUrl, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -390,23 +403,38 @@ public class Scorecard extends Fragment {
                     //  tv_teama_inning_1.setText(jObjA.getString("name"));
                     JSONObject jObjNow = jObjCard.getJSONObject("now");
 
+                    if(format.equalsIgnoreCase ( "test" )){
+                        JSONObject jObjining = jObjCard.getJSONObject ("innings");
+                        if(jObjining.has ( "a_1" )){
+                            JSONObject jObj_A_1 = jObjining.getJSONObject ( "a_1" );
+                            tv_teama_inning_1.setText(jObjA.getString("name") + "  " + jObj_A_1.getString("run_str"));
+                        }
+                        if(jObjining.has ( "b_1" )){
+                            JSONObject jObj_B_1 = jObjining.getJSONObject ( "b_1" );
+                            tv_teamb_inning_1.setText( jObjB.getString("name") + "  " + jObj_B_1.getString("run_str"));
+                        }
+
+                    }else {
+                        if (jObjNow.getString("batting_team").equalsIgnoreCase("a")) {
+                            tv_teama_inning_1.setText(jObjA.getString("name") + "  " + jObjNow.getString("runs_str"));
 
 
-                    if (jObjNow.getString("batting_team").equalsIgnoreCase("a")) {
-                        tv_teama_inning_1.setText(jObjA.getString("name") + "  " + jObjNow.getString("runs_str"));
+                        } else {
+                            tv_teama_inning_1.setText(jObjA.getString("name") + "  Yet To Bat");
 
+                        }
+                        if (jObjNow.getString("batting_team").equalsIgnoreCase("b")) {
+                            tv_teamb_inning_1.setText(jObjB.getString("name") + "  " + jObjNow.getString("runs_str"));
 
-                    } else {
-                        tv_teama_inning_1.setText(jObjA.getString("name") + "  Yet To Bat");
+                        } else {
+                            tv_teamb_inning_1.setText(jObjB.getString("name") + "  Yet To Bat");
 
+                        }
                     }
-                    if (jObjNow.getString("batting_team").equalsIgnoreCase("b")) {
-                        tv_teamb_inning_1.setText(jObjB.getString("name") + "  " + jObjNow.getString("runs_str"));
 
-                    } else {
-                        tv_teamb_inning_1.setText(jObjB.getString("name") + "  Yet To Bat");
 
-                    }
+
+
 
                     //T20
                     if(jObjCard.getString ( "format" ).equalsIgnoreCase ( "t20" )){
@@ -435,19 +463,53 @@ public class Scorecard extends Fragment {
                     }
 
 
-                    JSONObject jObjPlayerA = jObjCard.getJSONObject("players");
-                    Iterator keys = jObjPlayerA.keys();
+                    for (int j = 0; j < ArryPlaying_Xi_B.size(); j++) {
+                        JSONObject jObjPlayerA = jObjCard.getJSONObject ( "players" );
+                        Iterator keys = jObjPlayerA.keys ( );
+                        while (keys.hasNext ( )) {
+                            // loop to get the dynamic key
+                            String currentDynamicKey = ( String ) keys.next ( );
+                            HashMap<String, String> hashmap = new HashMap<> ( );
+                            if (ArryPlaying_Xi_B.get ( j ).equalsIgnoreCase ( currentDynamicKey )) {
+                                HashMap<String, String> hashMap = new HashMap<> ( );
+                                JSONObject currentDynamicValue = jObjPlayerA.getJSONObject ( ArryPlaying_Xi_B.get ( j ) );
+                                hashMap.put ( "name" , currentDynamicValue.getString ( "fullname" ) );
 
-                    while (keys.hasNext()) {
-                        // loop to get the dynamic key
-                        String currentDynamicKey = (String) keys.next();
-                        HashMap<String, String> hashmap = new HashMap<>();
+                                String team_a = currentDynamicValue.getString ( "fullname" );
+                                JSONObject jObjmatch = currentDynamicValue.getJSONObject ( "match" );
+                                JSONObject jObjinnings = jObjmatch.getJSONObject ( "innings" );
+                                JSONObject jObj_1 = jObjinnings.getJSONObject ( "1" );
+                                JSONObject jObjBatting = jObj_1.getJSONObject ( "batting" );
+
+                                //hashMap.put("out_str", jObjBatting.getString("out_str"));
+                                if (jObjBatting.has ( "runs" )) {
+                                    hashMap.put ( "run" , String.valueOf ( jObjBatting.getInt ( "runs" ) ) );
+                                    hashMap.put ( "balls" , String.valueOf ( jObjBatting.getInt ( "balls" ) ) );
+                                    hashMap.put ( "fours" , String.valueOf ( jObjBatting.getInt ( "fours" ) ) );
+                                    hashMap.put ( "sixes" , String.valueOf ( jObjBatting.getInt ( "sixes" ) ) );
+                                    hashMap.put ( "strike_rate" , String.valueOf ( jObjBatting.getInt ( "strike_rate" ) ) );
+                                    if (jObjBatting.getBoolean ( "dismissed" )) {
+                                        hashMap.put ( "out_str" , jObjBatting.getString ( "out_str" ) );
+                                    }
+                                    //hashMap.put("out_str", jObjBatting.getString("out_str"));
+                                }
+                                ArryHashPlaying_Xi_B.add ( hashMap );
+
+                            }
+                        }
+                    }
 
                         // get the value of the dynamic key
                         for (int j = 0; j < ArryPlaying_Xi_A.size(); j++) {
-                            if (currentDynamicKey.equalsIgnoreCase(ArryPlaying_Xi_A.get(j))) {
+                            JSONObject jObjPlayerA = jObjCard.getJSONObject("players");
+                            Iterator keys = jObjPlayerA.keys();
+                            while (keys.hasNext()) {
+                                // loop to get the dynamic key
+                                String currentDynamicKey = (String) keys.next();
+                                HashMap<String, String> hashmap = new HashMap<>();
+                            if ( ArryPlaying_Xi_A.get(j).equalsIgnoreCase(currentDynamicKey)) {
                                 HashMap<String, String> hashMap = new HashMap<>();
-                                JSONObject currentDynamicValue = jObjPlayerA.getJSONObject(currentDynamicKey);
+                                JSONObject currentDynamicValue = jObjPlayerA.getJSONObject( ArryPlaying_Xi_A.get(j));
                                 hashMap.put("name", currentDynamicValue.getString("fullname"));
 
                                 String team_a = currentDynamicValue.getString("fullname");
@@ -470,9 +532,9 @@ public class Scorecard extends Fragment {
                                 }
                                 ArryHashPlaying_Xi_A.add(hashMap);
 
-                            } else if (currentDynamicKey.equalsIgnoreCase(ArryPlaying_Xi_B.get(j))) {
+                            } /*else if ( ArryPlaying_Xi_B.get(j).equalsIgnoreCase(currentDynamicKey)) {
                                 HashMap<String, String> hashMap = new HashMap<>();
-                                JSONObject currentDynamicValue = jObjPlayerA.getJSONObject(currentDynamicKey);
+                                JSONObject currentDynamicValue = jObjPlayerA.getJSONObject(ArryPlaying_Xi_B.get(j));
                                 hashMap.put("name", currentDynamicValue.getString("fullname"));
 
                                 String team_a = currentDynamicValue.getString("fullname");
@@ -496,16 +558,16 @@ public class Scorecard extends Fragment {
 
                                 ArryHashPlaying_Xi_B.add(hashMap);
 
-                            }
+                            }*/
+                                Log.d("array", ArryHashPlaying_Xi_A.toString());
+                                /*display team a player name*/
+                                Log.d("team a", ArryHashPlaying_Xi_A.toString());
 
+                                Log.d("currentDynamicKey", currentDynamicKey);
                         }
 
                         //Toast.makeText(MainActivity.this, ArryHashPlaying_Xi_A.size() + "", Toast.LENGTH_SHORT).show();
-                        Log.d("array", ArryHashPlaying_Xi_A.toString());
-                        /*display team a player name*/
-                        Log.d("team a", ArryHashPlaying_Xi_A.toString());
 
-                        Log.d("currentDynamicKey", currentDynamicKey);
                     }
 
                     //End Batting Team B

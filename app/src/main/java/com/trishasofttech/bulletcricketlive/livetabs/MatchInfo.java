@@ -53,7 +53,7 @@ public class MatchInfo extends Fragment {
         return v;
     }
     private void loadCuMatch(String sKey) {
-        String LiveUrl = "https://rest.cricketapi.com/rest/v2/match/"+sKey+"/?access_token=2s1294346407548948481s1296111383213120903";
+        String LiveUrl = "https://rest.cricketapi.com/rest/v2/match/"+sKey+"/?access_token=2s1294346407548948481s1298512701944908478";
         StringRequest request = new StringRequest(LiveUrl, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {

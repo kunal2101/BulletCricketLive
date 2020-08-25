@@ -1,6 +1,7 @@
 package com.trishasofttech.bulletcricketlive.live;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,7 +30,8 @@ public class LiveFragment extends Fragment {
 
     private String live_url= "http://cricapi.com/api/cricket/?apikey=QU2rB4akb2SbwAmUFTwtZQ8whBX2";
     String url = "http://cricapi.com/api/cricketScore?apikey=QU2rB4akb2SbwAmUFTwtZQ8whBX2&unique_id=";
-    String live_match = "https://rest.cricketapi.com/rest/v2/recent_matches/?access_token=2s1294346407548948481s1296111383213120903&card_type=summary_card";
+    String live_match = "https://rest.cricketapi.com/rest/v2/recent_matches/?access_token=2s1294346407548948481s1298512701944908478&card_type=summary_card";
+     Handler handler;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         notificationsViewModel =
@@ -42,16 +44,34 @@ public class LiveFragment extends Fragment {
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(linearLayoutManager);
         loadupcoming();
+        handler = new Handler ();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                //Do something after 20 seconds
+                loadupcoming();
+                Toast.makeText ( getActivity (),"update",Toast.LENGTH_LONG ).show ();
+            }
+        }, 10000);
+
         return v;
     }
 
     private void loadupcoming() {
+
         StringRequest request = new StringRequest(live_match, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 
+
+               if(LiveHelper.arrLiveData.size () >0){
+                   LiveHelper.arrLiveData.clear ();
+               }
+
                 LiveHelper parse = new LiveHelper(response);
+
                 parse.livehelper();
+
 
 
                 LiveAdapter adapter = new LiveAdapter(getActivity(), LiveHelper.match, LiveHelper.id,LiveHelper.matchseries,LiveHelper.arrLiveData);

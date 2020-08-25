@@ -15,7 +15,7 @@ public class LiveDetailsActivity extends AppCompatActivity {
 
     //This is our viewPager
     private ViewPager viewPager;
-    String skey = "";
+    String skey = "",format="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +25,7 @@ public class LiveDetailsActivity extends AppCompatActivity {
         tabLayout = findViewById(R.id.tabLayout);
         try{
             skey = getIntent ().getStringExtra ( "key" );
+            format = getIntent ().getStringExtra ( "format" );
             Toast.makeText ( LiveDetailsActivity.this,skey,Toast.LENGTH_LONG ).show ();
         }catch (Exception e){
 
@@ -42,7 +43,7 @@ public class LiveDetailsActivity extends AppCompatActivity {
         viewPager = findViewById(R.id.pager);
 
         //Creating our pager adapter
-        LivePager adapter = new LivePager(getSupportFragmentManager(), tabLayout.getTabCount(),skey);
+        LivePager adapter = new LivePager(getSupportFragmentManager(), tabLayout.getTabCount(),skey,format);
 
         //Adding adapter to pager
         viewPager.setAdapter(adapter);

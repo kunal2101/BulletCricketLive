@@ -2,21 +2,23 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.trishasofttech.bulletcricketlive">
 
-    <uses-permission android:name="android.permission.INTERNET">
-
-    </uses-permission>
-
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
-
     <application
         android:allowBackup="true"
-        android:networkSecurityConfig="@xml/network_security_config"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+
+        android:hardwareAccelerated="true"
+        android:usesCleartextTraffic="true"
+        android:networkSecurityConfig="@xml/network_security_config"
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TestingActivity"></activity>
+        <uses-library android:name="org.apache.http.legacy" android:required="false"/>
+
+        <activity android:name=".ActivityGetToken">
+
+        </activity>
+        <activity android:name=".TestingActivity" />
         <activity
             android:name=".Activity.MainActivity"
             android:label="@string/title_activity_main"
@@ -27,10 +29,14 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
-        <activity android:name=".livetabs.LiveDetailsActivity"></activity>
-        <activity android:name=".Activity.SeriesActivity"></activity>
-        <activity android:name=".Activity.DetailsNewsActivity"></activity>
+        <activity android:name=".livetabs.LiveDetailsActivity" />
+        <activity android:name=".Activity.SeriesActivity" />
+        <activity android:name=".Activity.DetailsNewsActivity" />
     </application>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
 
 </manifest>

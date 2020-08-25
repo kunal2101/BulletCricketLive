@@ -78,6 +78,7 @@ public class LiveAdapter extends RecyclerView.Adapter<LiveAdapter.MyNoteHolder> 
                 ed.commit();
                 */
                 live.putExtra ( "key",hash.get("key") );
+                live.putExtra ( "format", hash.get ( "format" ));
                 context.startActivity(live);
 
 

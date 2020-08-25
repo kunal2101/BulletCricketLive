@@ -34,6 +34,7 @@
             layout="@layout/team_a_2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:visibility="gone"
             android:layout_marginTop="20dp"></include>
         <View
             android:layout_width="match_parent"
@@ -44,6 +45,8 @@
             layout="@layout/team_b_2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:visibility="gone"
+
             android:layout_marginTop="20dp"></include>
     </LinearLayout>
 

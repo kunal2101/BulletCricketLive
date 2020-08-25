@@ -20,6 +20,8 @@ public class LiveHelper {
     public LiveHelper(String json) {
         this.json = json;
     }
+    public LiveHelper() {
+    }
 
     public static void livehelper() {
 
@@ -34,10 +36,12 @@ public class LiveHelper {
             matchseries = new String[ja.length()];
             matchdate = new String[ja.length()];
             id = new long[ja.length()];
+
+
             //scorecard=new String[jsonArray.length()];
             for (int i = 0; i < ja.length(); i++) {
                 JSONObject jo2 = ja.getJSONObject(i);
-                if (jo2.getString("status").toString().equalsIgnoreCase("completed")) {
+                if (jo2.getString("status").toString().equalsIgnoreCase("started") || jo2.getString("status").toString().equalsIgnoreCase("completed")) {
                     HashMap<String, String> hashMap = new HashMap<>();
                     hashMap.put("matchseries", jo2.getString("name"));
                     hashMap.put("key", jo2.getString("key"));
@@ -56,6 +60,7 @@ public class LiveHelper {
 
                         JSONObject jObja_1 = jobjIning.getJSONObject("a_1");
                         hashMap.put("a_1", jObja_1.getString("run_str"));
+                        hashMap.put("format", jo2.getString("format"));
 
 
                     }/* else if (jo2.getString("format").toString().equalsIgnoreCase("t20")) {
